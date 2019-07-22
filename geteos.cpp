@@ -14,6 +14,13 @@ CONTRACT geteos: public contract {
 
          print(itr->balance);
       }
+      //소수점 몇자린지 출력하는 action
+      ACTION gettokeninfo(asset token){
+          //print token symbol
+          //print token precision
+          print(token.symbol.code().to_string());
+          print(token.symbol.precision());
+      }
     private://eosio token 테이블에 조율
       struct [[eosio::table]] account {
             asset    balance; //asset: Token타입
